@@ -1,0 +1,80 @@
+# *tuple* lar listeye benzer fakat tuple oluşturuken köşeli parantez kullanmaya gerek yoktur isteğe bağlı olarak norma parantez kullnılabilir.
+# Değişkenlerin tiplerini *type* fonksiyonun kullanarak öğrenebiliriz.
+a = [1, 2, 'üç', 3.8, True]
+b = 1, 2, 'üç', 3.8, True    # or b = (1,2, 'üç', 3.8, true) => isteğe bağlı olarak normal parantez eklenebilir.
+
+print(type(a))
+print(type(b))
+
+## tuple listeleri değiştirilemez.Ancak baştan yazarak yeni bir tuple listesi oluşturbiliriz.
+b = 2,3,4,5,6
+print(b)
+x = b + ('betül', 'kırçıl')
+print(x)   # tuple listeleri üzerine eleman veya başka bir tuple listesi ekleyebiliriz.
+
+## DICTIONARY: dictionaryler *key-value* seklinde çalışırlar.
+plaque = [48, 35]
+cities = ['Muğla', 'İzmir']
+
+# print(plaque[cities.index('Muğla')])
+# print(plaque[cities.index('İzmir')]
+# print('City named {}s plaque number is {}'.format(cities[0], plaque[cities.index('Muğla')]
+
+languages = {
+    'Python': 'Machine learning',
+    'Java': 'Web design',
+    'Cs': 'Application'
+}
+print(languages['Python'])
+print(languages.items())   # Dictionaries içindeki her bir key-value değerini yazdırabilmek için *items()* fonksiyonu kullanılır.
+print(languages.keys())    # Dictionaries içindeki sadece key kısmını yazdırabilmek için *key()* fonksiyonu kullanılabilir.
+print(languages.values())  # Dictionaries içindeki sadece value değerlerini dikte etmek için *values()* fonksiyonu kullanılabilir.
+
+for i,j in languages.items():
+    print(i + ' is related to ' + j)
+
+person_info = {
+    'Betül Kırçıl': {
+        'School': 'İzmir Bakırçay Üniversitesi',
+        'department': 'Computer Engineering',
+        'Number': '200601017',
+        'City that she has been living': 'Muğla'
+    },
+    'Anıl Ocak': {
+        'School': 'Kayseri Erciyes Üniversitesi',
+        'department': 'Aircraft Engineering',
+        'Number': '123456',
+        'City that he has been living': 'Muğla',
+    },
+}
+print(person_info['Betül Kırçıl']['City that she has been living'])
+print(person_info['Betül Kırçıl'])
+print(person_info['Anıl Ocak'])
+
+subjects = {
+    'Ahmet': ['Bioinformatic', 'Criptology'],
+    'Mehmet': ['Law', 'Statistic'],
+    'Buse': ['Industry Engineering', 'Mathmethics']
+}
+name = input('Please enter a name of student: ')
+for i in (subjects[name]):
+    print("The subjects {} has are {}".format(name, i))
+
+
+print("{}'s lessons are: ".format(name))
+for i in (subjects[name]):
+    print(i)
+
+# SETler kıvırcık parantezlerle oluşturulur ve indexlenemezler.
+
+fruits = {'Apple', 'Orange','Banana'}
+for i in fruits:
+    print(i)
+
+# Setler üzerine *update* metodu ile başka bi liste eklnebilir.
+
+numbers = {1,2,3,4,5,6}
+numbers.update([7,8,9,10])
+print(numbers)
+
+# Setler içerisinde bir elemadan yalnızca bir adet bulunur. Aynı kümeler gibi.

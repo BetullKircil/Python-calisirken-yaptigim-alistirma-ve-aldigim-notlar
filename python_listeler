@@ -1,0 +1,67 @@
+#a = "BNW, MERCEDES, OPEL, MAZDA".split()
+# a = ["bmw","mercedes","opel","mazda"]
+# print(len(a))
+# a[3] = "Toyota"
+# print(a)
+# b = ("mercedes" in a)
+# print(b)
+# # print(a[-2])
+# # print(a[ :3])
+# # print(a)
+# # print(a.pop())
+# # print(a[ ::-1])
+# # studentA = ["yiğit duman",2001,[60,70,80]]
+# # print(studentA[2][2])
+# a[2: ] = ["Nissan", "Renault"]
+# print(a)
+# print(a+["Nissan","Porche"])
+# del a[-1]
+# print(a)
+# names = ["ali","yağmmur","hakan","deniz"]
+# years = [1998,2000,1998,1987]
+# names.append("cenk")
+# print(names)
+# names.insert(0,"sena")
+# print(names)
+# names.pop()
+# print(names)
+# names.remove("deniz")
+# print(names)
+# del names[-1]
+# print(names)
+# result = "ali" in names
+# print(result)
+# names.reverse()
+# print(names)
+# names.sort()
+# print(names)
+# years.sort()
+# print(years)
+# str = ["Chevrelot","Dacia"]
+# print(str)
+# x = years.count(1998)
+# print(x)
+# years.clear()
+# print(years)
+# # x = input("Lütfen 1. araba markasını giriniz: ")
+# # y = input("Lütfen 2. araba markasını giriniz: ")
+# # z = input("Lütfen 3. araba markasını giriniz: ")
+# # # print(x)
+# # # print(y)
+# # # print(z)
+# # araba_markaları = [x,y,z]
+# # print(araba_markaları)
+# markalar = []
+# x = input("1. araba markasını giriniz: ")
+# markalar.append(x)
+# y = input("2. araba markasını giriniz: ")
+# markalar.append(y)
+# z = input("3. araba markasını giriniz: ")
+# markalar.append(z)
+# print(markalar)
+# sayi1 = input('Lütfen bir sayi giriniz: ')
+# sayi2 = input('Lütfen bir sayi giriniz: ')
+# sayi3 = input('Lütfen bir sayi giriniz: ')
+# toplam = int(sayi1) + int(sayi2) + int(sayi3)
+# print('Sayıların toplamı: {}'.format(toplam))
+

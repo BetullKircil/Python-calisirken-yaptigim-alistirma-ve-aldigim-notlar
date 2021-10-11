@@ -1,0 +1,121 @@
+x, y, z = 2, 5, 10
+numbers = 1, 5, 7, 10, 6
+# number1 = int(input('Please enter a number: '))
+# number2 = int(input('Please enter a number: '))
+total = x + y + z
+# print(number2 * number1)
+# print((number1*number2) - total)
+
+print(y//x)
+print(total%3)
+print(y**x)
+x, *y, z = numbers
+print(z**3)
+print(y[0] + y[1] + y[2])
+
+
+number1 = int(input('Please enter a number: '))
+number2 = int(input('Please enter a number: '))
+if number1 > number2:
+    print('Number1 is greater tha number2')
+else:
+    print('Number2 is greater than number1')
+
+
+
+midterm1 = int(input('Please enter your first midterm: '))
+midter2 = int(input('Please enter your second midterm: '))
+final = int(input('Please enter your final: '))
+average = (((midterm1 + midter2)*0.6) + final*0.4)/2
+print(average)
+if average > 50:
+    print('You passed')
+    if average == 50:
+        if final > 50:
+            print('you passed')
+        else:
+            print('You failed')
+
+elif final >= 70:
+    print('You passed')
+else:
+    print('You failed')
+
+
+
+sayi = int(input('Lütfen bir sayı giriniz: '))
+
+if sayi > 0:
+    if sayi % 2 == 0:
+        print('Sayı pozitif çift sayıdır.')
+    else:
+        print('Sayı pozitif tek sayıdır')
+else:
+    print('Sayı negatiftir')
+
+
+defuserName = 'kircilbetul'
+defpassword = '123456'
+username = input('Please enter your user name: ')
+password = input('Please enter your password: ')
+if username == defuserName:
+    if password == defpassword:
+        print('Welcome to out system')
+    else:
+        print('You have entered your password wrong.')
+        answer = input('Would you like to try again?') 
+        if answer == 'E' or answer == 'e':
+            newPassword = input('Please enter your new password: ')
+            print(' Just a second. Your information is being saved')
+            newPassword == defpassword
+            print('Your information has just been updated')
+elif defuserName != username and defpassword != password:
+    print('You have entered your information totaly wrong.')
+
+else:
+    print('You have entered your user name wrong, please try again.')
+
+# APPLICATION
+
+entered_number = int(input('Please enter a number: '))
+
+if entered_number > 0 and entered_number < 100:
+    print('The number you have entered is between 0 and 100')
+elif entered_number < 0:
+    print('The number you have entered is negative')
+else:
+    print('The number you have entered is greater than 100')
+
+
+number1 = int(input('Please enter a number: '))
+number2 = int(input('Please enter a number: '))
+number3 = int(input('Please enter a number: '))
+if number1 > number2 and number1 > number3:
+    print('The number1 is greater than others')
+elif number2 > number1 and number2 > number3:
+    print('The number2 is greater than others.')
+elif number3 > number1 and number3 >number2:
+    print('The number3 is greater than others')
+elif number2 == number1:
+    print('The number2 and number1 is equel')
+elif number1 == number3:
+    print('The number1 is equel to number3')
+else:
+    print('The number2 and number3 is equel')
+
+
+# identity operator = is
+# Bu operator türünde *is* ile soru sorarken *aynı adrese sahip mi* diye sorarız aslında.
+x = y = [1, 2, 3]
+z = [1, 2, 3]
+print(x == y) # Listelerin sonuçları aynıdır. (True)
+print(x is z) # Listelerin adresleri farklıdır. (False)
+print(x is y) # Listelerin adresleri aynıdır. (True)
+
+# Membership operator = in
+fruits = ['Banana', 'apple']
+print('apple' in fruits)
+print('banana' in fruits)
+
+name = 'Betül'
+print('t' in name)  # Bir elemanın bir argüman içinde veya liste içinde var mı diye kontrol etmek için *in* operatoru kullaılır.

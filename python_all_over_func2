@@ -1,0 +1,356 @@
+
+
+
+def words(word):
+    return word
+print(words('Kelime'))
+
+def kelime_oyunu(word1, word2):
+    return word1 + word2
+print(kelime_oyunu('Bilgecan', ' dede'))
+
+def matematik_oyunu(*args):
+    total = 0
+    for numbers in args:
+        total += numbers
+    return total
+print(matematik_oyunu(2,3,4,5,7,9,765,5,4,65,6))
+
+def sayilari_carp(*args):
+    carpim = 1
+    for numbers in args:
+        carpim *= numbers
+    return carpim
+print(sayilari_carp(23,4))
+
+def sozluk_ac(**args):
+    for key, value in args.items():
+        print('{} is {}'.format(key, value))
+sozluk_ac(name = 'Betül', surname = 'Kırçıl', age = 19)
+# print(sozluk_ac(name = 'Feride', surname = 'Hediye'))
+# print(sozluk_ac(name = 'Ahmet', surname = 'Gündogdu'))
+# print(sozluk_ac(name = 'Mehmet', surname = 'Kemer'))
+
+## İÇİÇE FONKSİYONLARR::
+def out_func():
+    print('Out function is running.')
+    def inner_func():
+        print('Inner function is running.')
+    inner_func()   ## İç fonksiyonun da çalışması için iç fonksiyonun çagirilmasi gerekir.
+    print('Out function ended.')
+    inner_func()
+out_func()
+
+def hesaplamalar(x):  ##Dis fonksiyonu tanimladim.
+    def kare_al(x):   ## İç fonksiyon da tanimladim
+        return x **2
+    print(kare_al(x))
+    def karekok_al(x):
+        return x **0.5
+    print(karekok_al(x))
+    def faktoriyel_hesapla(x):
+        faktoriyel = 1
+        for i in range(1, x + 1):
+            faktoriyel *= i
+        return faktoriyel
+    print(faktoriyel_hesapla(x))
+
+print(hesaplamalar(6))
+
+
+## HESAP MAKİNESİ:
+
+def hesap_makinesi(x):
+    def kare_al(x):
+        return x **2
+    kare_al(x)
+    def karekok_al(x):
+        return x ** 0.5
+    karekok_al(x)
+    def faktoriyel_hesapla(x):
+        faktoriyel = 1
+        for i in range(1, x + 1):
+            faktoriyel *= i
+        return faktoriyel
+    faktoriyel_hesapla(x)
+    kare = kare_al(x)
+    karekok = karekok_al(x)
+    fakt = faktoriyel_hesapla(x)
+    return f"kare: {kare}, karekok: {karekok}, faktoriyeli: {fakt}"
+    
+print(hesap_makinesi(6))
+
+## SAYI TAHMİNİ:
+# import random
+# sayi = random.randint(1,10)
+# hak = int(input('Bu oyund kaç tane hak istersiniz: '))
+# sayac = 0
+# # puan = 100 - (100 / hak) * (sayac - 1)
+
+# while hak >= 0:
+#     hak -= 1
+#     sayac += 1
+#     tahmin = int(input('Lütfen bir sayi tahmin ediniz: '))
+#     if tahmin == sayi:
+#         print(f'Tebrikler, sayiyi {sayac}. seferde bildiniz.')
+#         break
+#     elif tahmin < sayi:
+#         print('YUkari.')
+#     else:
+#         print('Asagi.')
+#     if hak == 0:
+#         print('Uzgunuz, hakkinİzi bitirdiniz.')
+#         break
+
+## HESAP MAKİNESİ:
+
+# def islemleri_hesapla(x, y):
+#     def toplama_islemi(x, y):
+#         return sum((x, y))
+#     print(toplama_islemi(x, y))
+#     def cikarma_islemi(x, y):
+    
+#         if x > y:
+#             return x - y
+#         else:
+#             return y - x
+#     print(cikarma_islemi(x, y))
+#     def carpma_islemi(x, y):
+#         return x * y
+#     print(carpma_islemi(x, y))
+#     def faktoriyel_hesapla(x, y):
+#         if x < y:
+#             fakt = 1
+#             for i in range(2, y + 1):
+#                 fakt *= i
+#                 return fakt
+#         else:
+#             fakt = 0
+#             for i in range(2, x + 1):
+#                 fakt *= i
+#                 return fakt
+#         return faktoriyel_hesapla(x, y)
+#     print(faktoriyel_hesapla(x, y))
+#     def karesini_al(x, y):
+#         if x < y:
+#             return x **2
+#         elif y < x:
+#             return y **2            
+#         return karesini_al(x, y)
+#     print(karesini_al(x, y))
+#     def karekokunu_al(x, y):
+#         if x < y:
+#             return x ** 0.5
+# #       elif y < x:
+#             return y ** 0.5
+#         return karesini_al(x, y)
+#     print(karekokunu_al(x, y))
+#     return islemleri_hesapla(x, y)
+# print(islemleri_hesapla(12, 23))
+
+## HESAP MAKİNESİ BİTİMİ
+
+## * args and **kwargs functions:
+def kuvvet_al(a, b): # positional arguments (a, b, vs.)
+    return a ** b
+print(kuvvet_al(3, 4))
+
+def kisisel_bilgi(ad = 'Bu bilgi girilmedi', soyad = 'Bu bilgi girilmedi', yas = 'Bu bilgi girilmedi'):  # KEYWORD ARGUMENT
+    return f"Name: {ad}, Surname: {soyad} age: {yas} "
+print(kisisel_bilgi('Betül', yas = 19))          
+
+def ortalama(*args):
+    return sum(args) / len(args)
+print(ortalama(23,56,78,34))
+
+def selamla(mesaj, *args):
+    print(mesaj)
+    print('******')
+    for arg in args:
+        print(arg)
+selamla('Merhaba', 23, True, 'Ahmet', 56, 34.8 )
+
+def selam_ver(mesaj, *args):
+    sonuc = ''
+    sonuc += mesaj
+    sonuc += ' '
+    for arg in args:
+        sonuc += arg
+        sonuc += ' '
+    return sonuc
+print(selam_ver('Merhaba', 'Nasilsin','Nasil gidiyor', 'Ailen nasil', 'İyi mi?'))
+
+def dict(**kwargs):  ## KEYWORD ARGUMENTS CAN TAKE LOTS OF ARGUMENTS, AND THEN CONVERT THESE ARGUMENTS TO THE DICTIONARY.
+    return kwargs
+print(dict(ad = 'Betül', surname = 'Kırçıl', age = 19, job = 'Mühendis'))
+
+def kendini_tanit(intro, *args, **kwargs):
+    print(intro)
+    print('*****')
+    for arg in args:
+        print(arg)
+    print('*****')
+    for key, value in kwargs.items():
+        print(f'{key} is {value}')
+kendini_tanit('Merhaba', 23,56,34,78,90,34,45, name = 'Betül', surname = 'Kırçıl', age = 19)
+
+
+def is_tanimi(**kwargs):
+    for key, value in kwargs.items():
+        print(f'{key} is {value}.')
+is_tanimi(job1 = 'Mühendislik', job2 = 'Öğretmenlik', job3 = 'Doktorluk', job4 = 'Hemşirelik')
+
+
+# def islemleri_hesapla(*args):
+#     def toplama_islemi(args):
+#         return sum(args)
+#     toplama_islemi(args)
+#     def carpma_islemi(args):
+#         carpim = 1                            ## fazla sayıda arguman alarak islem yapmaya calisan hesap maskinesi yapmaya calistim!!!
+#         for arg in args:
+#             carpim *= arg
+#         return carpim
+#     carpma_islemi(args)
+#     def kare_al(args):
+#         for arguman in args:
+#             print(arguman **2)
+#         return arguman
+#     kare_al(args)  
+#     def karekok_bul(args):
+#         for element in args:
+#             print(element ** 0.5)
+#         return element
+#     karekok_bul(args)
+#     toplam = toplama_islemi(args)
+#     carpma = carpma_islemi(args)
+#     kare_alma = kare_al(args)
+#     karekok_bulma = karekok_bul(args)
+#     return f'Bu sayilarin toplami {toplam}, carpimi {carpma} karesi {kare_alma} ve karekoku {karekok_bulma} dir'
+# print(islemleri_hesapla(1,2,3,4,5,6,7,8,9))
+
+# sayilar = [1,2,3,4,5,6,7,8,9]
+# for sayi in sayilar:
+#     print(sayi ** 2)
+
+
+## CALCULATING SOMETHING BY TAKING INPUT
+hak = int(input('Please enter how many right you would like for this calculating:  '))
+while hak > 0:
+    hak -= 1
+    islem = input('Please choose a operation you would like to do: ').lower()
+    if islem == 'adding':
+        value1 = float(input('Please enter the first value: '))
+        value2 = float(input('Please enter the second value: '))
+        print(value1 + value2)
+        break
+    elif islem == 'crossing':
+        value1 = float(input('Please enter the first value: '))
+        value2 = float(input('Please enter the second value: '))
+        print(value1 * value2)
+        break
+    elif islem == 'removing':
+        value1 = float(input('Please enter the first value: '))
+        value2 = float(input('Please enter the second value: '))
+        if value1 > value2:
+            print(value1 - value2)
+            break
+        else:
+            print(value2 - value1)
+            break
+    else:
+        print('You have chosen invalid opeartion. Please try again. ')
+    if hak == 0:
+        print('We are sorry, your right is up.')
+
+
+## HESAPLAMA İŞLEMLERİ:
+def topla(*args):
+    for arg in args:
+        print(arg)
+topla(1,2,3,4,5,6,7,'Python')
+
+def carpma_islemi(*args):
+    print(type(args))
+carpma_islemi()
+
+def carp(*args):
+    carpim = 1
+    for arg in args:
+        carpim *= arg
+    return carpim
+print(carp(2,3,4,5,5))
+
+def adding(*args):
+    total = 0
+    for arg in args:
+        total += arg
+    return total
+print(adding(1,2,3,4,5,6,7,8))
+
+def ortalam(*args):
+    return sum(args) / len(args)
+print(ortalama(1,2,3,4,5,6,7,8,9))
+
+##Applications about functions in python
+# 1- Gonderilen bir kelimeyi ekranda belirtilen kez yazdırma.
+def ekrana_yazdir(x, y):
+    return x * y
+print(ekrana_yazdir('Betül ', 3))
+    
+# 2- Kendıne gonderilen sınırsız sayidaki parametreyi bir listeye ceviren fonksiyon yaziniz.
+list = []
+def listeye_cevir(*args):
+    for arg in args:
+        list.append(arg)
+    return list
+print(listeye_cevir(12,3,4,5,6,7,8,8,9))
+# 3- Gonderilen iki sayi arasindaki asal sayilari bulun.
+
+
+# def asal_sayilar(a, b):
+#     i = 0
+#     for sayilar in range(a, b + 1):
+#         i += 1
+#         if sayilar % i == 0:
+#             continue
+#         else:
+#             print('{} sayisi asaldir.'.format(sayilar))
+#             break
+#     return sayilar
+# b = int(input('Lütfen bir sayi giriniz:'))
+# a = int(input('Lütfen bir sayi giriniz:'))
+# print(asal_sayilar(a,b))
+            
+
+
+# 4- Kendisine gonderilen bir sayinin tam bolenlerini bir liste seklinde dondurun.
+
+def tam_bolenleri_listele(sayi):
+    for i in range(1, sayi + 1):
+        if sayi % i == 0:
+            print(f'Bu sayinin tam bolenleri {i} dir.')
+            pass
+    return i
+sayi = int(input('Lütfen bir sayi giriniz: '))
+print(tam_bolenleri_listele(sayi))
+
+# 3- Gonderilen iki sayi arasindaki asal sayilari bulun.
+# def asal_sayilari_bul(sayi1, sayi2):
+#     for sayi in range(sayi1, sayi2):
+
+#         if sayi > 1:
+#             for i in range(2, sayi):
+
+#                 if sayi > 1:
+#                     for i in range(2, sayi + 1):
+#                         if sayi % i == 0:
+#                             break
+#                     else:
+#                         print(sayi)
+# asal_sayilari_bul(23,45)
+
+## MAP, FİLTER VE LAMBDA FONKSİYONLARI:
+def square(num): return num ** 2
+numbers = [1,3,5,9]
+print(list(map(square, numbers)))
+

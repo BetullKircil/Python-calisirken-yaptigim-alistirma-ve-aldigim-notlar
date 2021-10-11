@@ -1,0 +1,376 @@
+from _typeshed import SupportsNoArgReadline
+
+
+def soyad():
+    print('Kırçıl')
+soyad()
+
+
+def isim(name):
+    return name
+a = isim('Esma Nur Kırçıl')
+print(a)
+
+
+def toplam(number1, number2):
+    return number1 + number2
+a = toplam(34, 67)
+print(a)
+
+
+def renkler():
+    print('Mavi')
+renkler()
+
+
+def meyveler():
+    return
+print('Mango')
+b = meyveler()
+print(b)
+
+def sayHello(name = 'user'):
+    print('Hello', name)
+sayHello('Betül')
+sayHello('Esma')
+sayHello('Begül')
+sayHello()
+
+def yasHesapla(dogumYili):
+    return 2021 - dogumYili
+age = yasHesapla(2002)
+print(age)
+
+def emeklilige_kac_kaldi():
+    '''
+    DOCSTRING: Dogum yiliniza gore emekliliginize kac yil kaldi.
+    INPUT: Dogum yili
+    OUTPUT: Hesaplanan yil bilgisi
+    '''
+    age = yasHesapla(dogumYili= 1987)
+    return 65 - age
+sure = emeklilige_kac_kaldi()
+print(sure)
+if sure <= 0:
+    print('Zaten emeklisiniz.')
+else:
+    print('Emekliliğinize {} yıl kaldı'.format(emeklilige_kac_kaldi()))
+
+print(help(emeklilige_kac_kaldi))
+
+def egitim(okul):
+    return okul   ## RETURN DÖNDÜRÜR, PRİNT YAZDIRIR. RETURN İLE DÖNDÜRDÜĞÜMÜZ İFADEYİ PRİNT İLE YAZDIRMAK ZORUNDAYIZ.
+print(egitim('Lise'))
+
+def egitim():
+    print('lise')  ## PRİNT İLE YAZDIRDIĞIMIZ İFADEYİ FONKSİYON İLE ÇAGIRMALIYIZ.
+egitim()
+
+# urunler = ['Pantolon', 'T-shirt', 'Ayakkabi', 'Canta']
+# fiyatlar = [120, 75, 300, 150]
+# list1 = []
+# list2 = []
+# satilanlar = []
+# for urun, fiyat in zip(urunler, fiyatlar):
+#     print(urun, fiyat)
+#     # list1 += urun                              ## KENDİM KAFAMDAN YAPTIĞIM ŞFNJLASJJIF
+#     # list2 += fiyat
+#     alinan_urunler = input('Lütfen aldığınız ürünleri seciniz: ')
+#     satilanlar.append(alinan_urunler)
+#     print(satilanlar)
+#     def total_price(*params):
+#         return sum(*params)
+# print(total_price(satilanlar[2]* list2[2])
+
+#name = input('Lütfen isminizi giriniz: ')
+# def yas(dogum_yili):
+#     return 2021 - dogum_yili
+# a = yas(2002)
+# print(a)
+# print('{} in yasi: {}'.format(name, yas(2002)))
+
+# def mezuniyete_kac_kaldi(yas):
+#     return 23 - yas
+# print(mezuniyete_kac_kaldi(yas(2002)))
+# print('{}, {} yıl sonra mezun olacak.'.format(name, mezuniyete_kac_kaldi(yas(2002))))
+
+
+def greeting(name):
+    return name
+print(greeting('Betül'))
+
+def fonksiyon():
+    print('Benim adim Betül')
+fonksiyon()
+
+def tanitim(name, surname, age):
+   return f'My name is: {name} {surname} and I am {age} years old.'
+print(tanitim('Betül', 'Kırçıl', 19))
+
+siniflar = ['1-A', '2-A', '3-A']
+def okuldaki_siniflar():
+    for sinif in siniflar:
+        print('Bu okuldaki siniflar: {}'.format(sinif))
+okuldaki_siniflar()
+
+# def hesaplamalar(sayi1, sayi2):
+#     def carpim(sayi1, sayi2):
+#         return sayi1 + sayi2
+#     return hesaplamalar(sayi1, sayi2)
+# print(hesaplamalar(45, 55))
+
+def kisi():
+    return 'Betül'
+print(kisi())
+
+
+def kisi(isimler):
+    return isimler
+print(kisi('Esma Nur'))
+
+# def outer_fonk(sayi):
+#     def inner_fonk(sayi):
+#         x = 1
+#         for i in range(1, sayi + 1):
+#             x *= i
+#             return x
+#     return inner_fonk(5)
+# print(outer_fonk(5))
+
+
+def cikarma(number1, number2):
+    return  number1 - number2
+    
+def carpma(number1, number2):
+    return number1 * number2
+
+def toplama(number1, number2):
+    return number1 + number2
+
+def hesapla(fonk, a, b):
+    return fonk(a, b)
+print(hesapla(cikarma, 45,30))
+
+def bilgi_ver():
+    print('İşlem başarılı!')
+bilgi_ver()
+bilgi_ver()
+bilgi_ver()
+bilgi_ver()
+bilgi_ver()
+bilgi_ver()
+bilgi_ver()
+
+def bilgi_verildi():
+    print('İşlem başarılı')
+    print('Blogun icerisi')
+bilgi_verildi()
+
+def selamla(name):
+    print('Merhaba ' + name)
+selamla('Esma Nur')
+selamla('Elif')
+selamla('Ayten')
+
+def topla(x, y):
+    print(f'{x} ve {y} sayilarinin toplami: ' + str(x + y))
+topla(4, 5)
+topla(4, 6)
+topla(4, 9)
+topla(1223, 6564)
+
+def ortalama_hesapla(liste):
+    toplam = sum(liste)
+    adet = len(liste)
+    ortalama = toplam / adet
+    print(f'Girilen sayilarin toplami: {toplam}, adedi: {adet} ve ortalamasi: {ortalama}')
+ortalama_hesapla([23,56,78,89,23,109,345])
+
+def buyuk_harfe_cevir(metin):
+    metin = metin.upper()
+    print(metin)
+buyuk_harfe_cevir('benim adim betul kircil')
+buyuk_harfe_cevir('Asya kitasi en büyük yüz olcumune sahip kitadir.')
+buyuk_harfe_cevir('olimpiyatlarda yarismacilarimiz altin, bronz ve gumus madalya almaya hak kazandi')
+
+def selamla(mesaj, isim, soru):
+    print(f'{mesaj} {isim} {soru}')
+selamla('Merhaba', 'feride', 'nasilsin?')
+selamla('Naber', 'Ayşe', 'Nasilsin')
+selamla('selam', 'ali', 'naber')
+
+def indirim_hesapla(fiyat, yuzde): # Fonksiyon tanimlanir.
+    indirim_miktari = fiyat * (yuzde/ 100)
+    indirimli_fiyat = fiyat - indirim_miktari    ## Degiskenler tanimlanir. 
+    print('Bu urunun indirindirimli fiyatı: {}'.format(indirimli_fiyat))
+indirim_hesapla(180, 10)  ## Fonksiyon cagirilir.
+
+def hesapla(x, y):
+    print(f'Bu sayilar: {x}, {y} ve bu sayilarin toplami: {x + y}')
+hesapla(56,44)
+
+def hesapla(x, y):
+    return x + y
+print(hesapla(23,89))
+
+def buyuk_harfe_dondur(metin):
+    return metin.upper()
+print(buyuk_harfe_dondur("istanbul'un fethi 1453'te olmustur."))
+
+def topla(x, y):
+    return x + y
+def carp(x, y):
+    return x * y
+
+def islem_yap(fonk, a, b):  ## bir fonksiyon baska bir fonksşyona parametre olarak gonderilebilir ancak fonksiyonu gonderirken sadece ismini gonderecegız paranteze gerek yok.
+    return fonk(a, b)
+print(islem_yap(carp, 34,67))
+print(islem_yap(topla, 34,67))
+
+liste1 = [1,2,3,4,5]
+liste1 = [1,2,3,4,5,8,9,11]
+
+def kare_al(x):
+    return x**2
+def kup_al(x):
+    return x**3
+
+def map_fonk(fonk, liste):
+    sonuc = []
+    for i in liste:
+        sonuc.append(fonk(i))
+    return sonuc
+print(map_fonk(kup_al, liste1))
+
+def sayi_dondur(sayi):
+    return sayi
+print(sayi_dondur(123))
+
+# def sayi_ver(sayi):
+#     print(sayi)
+# sayi_ver('Betül')
+
+def isim(name = 'Betul'):  ## default functions
+    return name
+print(isim('Ahmet'))
+print(isim())
+
+def buyuk_sayi_dondur(a, b):
+    if a > b:
+        return "{} sayisi {} sayisindan daha buyuktur.".format(a, b)
+    elif a == b:
+        return f"{a} ve {b} sayilari esittir."
+    else:
+        return "{} sayisi {} sayisindan daha buyuktur.".format(b, a)
+print(buyuk_sayi_dondur(34, 34))
+print(buyuk_sayi_dondur(34, 56))
+print(buyuk_sayi_dondur(89, 56))
+
+def isim(name):
+    print(name)
+isim('asli')
+
+def jobs(meslek):
+    return meslek
+print(jobs('Engineer'))
+
+def name(isim = 'Betül'):
+    return isim
+print(name())  ## default olarak tanımlandı.
+print(name('Hatice'))
+print(name('Mehmet'))
+print(name('Feraye'))
+
+def toplama_islemi(a, b):
+    return sum((a, b))
+print(toplama_islemi(34, 66))
+
+name = input('Lütfen isminizi giriniz: ')
+def yas_hesapla(dogumyili):
+    return 2021 - dogumyili
+print(yas_hesapla(2002))
+print(f'{name}in yasi: {yas_hesapla(2002)}')
+
+def emeklilige_kac_kaldi(dogumyili):
+    yas = yas_hesapla(dogumyili)
+    kalan_sure = 65 - yas
+    
+    if kalan_sure <= 0:
+        print('Zaten emekliainiz.')
+    else:
+        print('Emekli olmanıza {} yil kaldi.'.format(kalan_sure))
+emeklilige_kac_kaldi(2002)
+emeklilige_kac_kaldi(1971)
+emeklilige_kac_kaldi(1979)
+
+def sayilari_topla(number1, number2):
+    return sum((number1, number2))
+print(sayilari_topla(4,89))
+
+# def add(*args):
+#     print(args)
+#     print(args[2])
+    
+#     return sum((args))   ## 
+# print(add(1,2,3,4,55,6,7,8,9,12,3445,45))
+
+def sayilari_carp(*args):
+    carpim = 1
+    for i in args:
+        carpim *= i
+    return carpim
+print(sayilari_carp(2,34,4))
+
+sayilarin_toplami = []
+def add(*args):
+    print(args)
+    if len(sayilarin_toplami) > 3:
+        print(args[2])
+    else:
+        pass
+
+    total = 0
+    for i in args:
+        total += i
+        sayilarin_toplami.append(total)
+    return total
+print(add(23,45))
+
+def users(**args):
+    for key, value in args.items():
+        print('{} is {}'.format(key, value))
+
+users(name = 'betül')
+users(name = 'ismail')
+
+def my_func(a, b, c, *args):
+    print(a)
+    print(b)
+    print(c)
+    print(args)
+    return a, b, c, args
+print(my_func(1,34,56,78,34,67,8967,34,56))
+
+
+def intro_func(isim = 'Ahmet', soyad = 'Demirci', yas = 38, sehir = 'Antalya'):
+    return f"My name is {isim} {soyad}, I am {yas} years old, and I also live in {sehir}"
+
+print(intro_func(soyad = 'Kırçıl', yas = 19,  sehir='Muğla'))
+
+# import random
+# asil_sayi = random.randint(1,10)
+# hak_sayisi = int(input('Lütfen bu oyunda kaç hak istediginizi belirtiniz: '))
+# i = 0
+# def sayiyi_bul(number):
+#     while i <= hak_sayisi:
+#         i += 1
+#         if number == asil_sayi:
+#             print('Tebrikler dogru bildiniz.')
+#         elif number < asil_sayi:
+#             print('Yukarı')
+#         else:
+#             print('Asagi')
+#         if hak_sayisi == 0:
+#             print('Üzgünü, hakkınızı doldurdunuz')
+# sayiyi_bul(5)
+

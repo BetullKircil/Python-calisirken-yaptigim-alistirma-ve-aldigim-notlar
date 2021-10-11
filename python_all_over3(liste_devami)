@@ -1,0 +1,135 @@
+# Liste oluştururken köşeli parantez kullanmamız gerekiyor. Köeli parantezlerin içinde argümanlar olacak.
+
+arabalar = ['Opel','Mazda','Mercedes','BMW']
+print(len(arabalar))   # arabalar listesinin eleman sayısını bulabilmek için *len* metodunu kullanmamız gerekiyor.
+print(arabalar[0], arabalar[len(arabalar) - 1]) # arabalar listesinin ilk ve son elemanını bulmak için kullanılan metod...
+arabalar[1] = 'Toyota'   # listenin herhangi bir elemanını değiştirmek için o indexteki eleman başka bir elemana eşitlenir.
+print(arabalar)
+
+araba= arabalar.count('Mercedes')
+print(araba)
+print(arabalar[-2])
+print(arabalar[ :3])
+arabalar[-2:] = ['Toyota','Renault']  # Liste içinde birden fazla argüman değişikliği yapılmak isteniyorsa yine o kısmın indexi belirtilerek başka bir listeye eşitlenebilir.
+print(arabalar)
+# arabalar = arabalar + ['Nissan', 'Auidi']
+arabalar = arabalar + ['Nissan', 'Auidi']
+print(arabalar)
+
+extra = ['Nissan', 'Auidi']
+arabalar.extend(extra)
+print(arabalar)
+arabalar.pop() # Listenin sonundaki elemanı silmek için *pop* metodu kullanılır.
+print(arabalar)
+
+arabalar.remove('Nissan')
+print(arabalar)
+
+extra.clear()
+print(extra)
+arabalar.reverse()
+print(arabalar)
+
+# Pythonda bir elemanın bir liste içinde bulunup bulunmadığını öğrenebilmek için *x in y* metodu kullanılır.
+result = 'Auidi' in arabalar
+print(result)
+
+# Bir listenin içinde bir elemandan kaç tane bulunduğunu öğrenmek için ise *count* etodu kullanılır.
+arabalar = arabalar.count('Nissan')
+print(arabalar)
+
+# Bir listede bir elemanın var olup olmadığını ve varsa ilk kaçıncı indexte olduğunu öğrenmek için *index* metodu kullanılır.
+fruits = ['Mango', 'Ananas', 'Muz', 'Enginar']
+fruit = fruits.index('Mango')
+print(fruit)
+# Listedeki sonuncu elemanı silmek için *pop* metodu kullnılabilir ve ayrıca *del* metodu kullanılarak da index numarası belirtilerek silinme işlemi tamamlanabilir. 
+print(fruits)
+fruits = fruits.pop()
+print(fruits)
+ 
+'''
+ Başka bir liste oluşturacağız.
+ 
+'''
+# İç içe listeler kullanılabilir.
+studentA = ['Yiğit Bilgi', 2010, [70, 60, 70]]
+studentB = ['Sena Turan', 1999, [80, 80, 70]]
+studentC = ['Ahmet Turan', 1998, [80, 70, 90]]
+print(studentA[2][1])
+print(studentB[0])
+print(studentC[1])
+not_ortalamasıA =(studentA[2][1] + studentA[2][2] +studentA[2][0]) / 3
+not_ortalamasıB =(studentB[2][1] + studentB[2][2] +studentB[2][0]) / 3
+not_ortalamasıC =(studentC[2][1] + studentC[2][2] +studentC[2][0]) / 3
+
+yasA = 2021 - studentA[1]
+yasB = 2021 - studentB[1]
+yasC = 2021 - studentC[1]
+print('{} isimli öğrencinin doğum yılı: {} ve yaşı: {}. {}nin not ortalamasi: {}'.format(studentA[0], studentA[1], yasA, studentA[0], not_ortalamasıA))
+
+people = ['Esma Nur', 'Betül', 'Begül']
+years = [2020, 2002, 2009]
+people.append('Cansel') # Listenin sonuna eleman eklemek için *append* metodu kullanılabilir.
+print(people)
+
+people.insert(0, 'Hüseyin')  # *insert* metodunu kullanarak istediğin indexe eleman ekleyebilirsin.(index numarasını başta belirterek)
+print(people)
+
+extra_people = ['Erol', 'Yusuf', 'Emine']
+people.extend(extra_people)   # *extend* metoduyla başka bir listeyi listeye ekleyebirsin.
+print(people)
+
+people.remove('Erol')  # Herhangibir elemanı listeden çıkarabilmek için *remove* metodu kullanılabilir. Ancak bu metotta çıkarılacak arguman metodun içine yazılır.
+print(people)
+
+people = people.index('Yusuf')  # Listelerdeki bir elemanın index numarasını bulabilmek için *index* metodu kullanılır.
+print(people)
+
+vegetables = ['Cucumber', 'Zucchini', 'Tomato']
+vegetables.reverse()   # Liste elemanlarını ters çevirebilmek için *reverse* metodunu kullanabiliriz.
+print(vegetables)
+
+vegetables.sort()
+print(vegetables)  # Liste elemanlarını alfabetik veya sayısal olarak sıralayabilmek için *sort* metodu kullnaılabilri.
+
+years.sort()
+print(years)
+
+str = 'Kalem, silgi, silgi,silgi, kalemtıraş, cetvel, defter, kitap'
+str = str.split(',') # String ifadeleri listeye dönüştürebilmek için *split* metodu kullnaılabilir.
+print(str)
+
+min = min(years)  # Listedeki en küçük ve büyük elemanları dikte edebilmek için *min* be *max* metodları kullanılır. 
+max = max(years)
+print(min, max) 
+
+
+years.clear()  # listeyi silmek için *clear* metodu kullanılır.
+print(years)
+
+sayilar = [1,2,2,3,4,5,6]
+sayilar = sayilar.count(2) # listede bir elemanın kaç tane olduğunu öğrenebilmek için *count* metodu kullanılır.
+print(sayilar)
+
+sayilar = []
+print(sayilar) # listeyi boş kümeye eşitledik.
+
+'''markalar = []
+product1 = input('Lütfen aracınızın markasını giriniz: ')
+product2 = input('Lütfen aracınızın markasını giriniz: ')
+product3 = input('Lütfen aracınızın markasını giriniz: ')
+
+customer_products = [product1, product2, product3]
+markalar.append(product1)
+markalar.append(product2)
+markalar.append(product3)
+print(markalar)
+'''
+markalar = []
+i = 0
+while i < 3:   ## while döngüsüyle boş liste içine eleman ekleme işlemi...
+    marka = input('Lütfen aracınızın markasını giriniz: ')
+    markalar.append(marka)
+    print(markalar)
+    i += 1
+print('Araba listesi başarıyla oluşturulmuştur.')

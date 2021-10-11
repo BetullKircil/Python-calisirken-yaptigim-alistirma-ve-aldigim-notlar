@@ -1,0 +1,143 @@
+import collections
+# Liste ve string ifadelerde her bir karaktere 0'dan başlayarak index numarası atanır. Karakter sayısı daima index numarasından +1 fazladır.
+starting = 'Hello there my name is Betül.'
+print(starting[1])
+
+starting = starting.split()
+print(starting[1])
+
+
+website = 'http://www.sadikturan.com'
+course = 'Python kursu: Baştan sona python programlama rehberiniz (40 saat)'
+# Course karakter dizisinde kaç karakter bulunmaktadır?
+length = len(course)
+print('How many elements are there in course string of characters? ')
+print('There are', length, 'elements in course string of characters.')
+
+print(website[7:10]) #website içinden www karakterlerini alınız.
+print(website[len(website) -3:len(website)]) #website içinden com karakterini alınız.
+print(course[ :15], course[-15: ]) #course karakter dizisinin ilk ve son 15 karakterini alınız.
+print(course[::-1]) #course karakter dizisindeki karakterleri tersten yazdırınız.
+
+name, surname, age, job = 'Betül', 'Kırçıl', 19, 'Engineer'
+print('My name is {} {} I am {}, I am {} years old.'.format(name, surname, job, age))
+
+greeting = 'Hello world'
+print(greeting)
+greeting = greeting.replace('w','W') # String ifade içindeki karakterleri başka karakterlerle değiştirirken replace methodu kullanılır.
+print(greeting)
+
+print('abc '*3)
+
+# Herhangi bir karakter dizisinde başta ve sonda bulunan boşlukları silmek için 'strip' methodu kullanılır.
+a = ' Hello world '.strip()
+b = ' Hello world '.lstrip()
+c = ' Hello world '.rstrip()
+print(a)
+print(b)
+print(c)
+
+print(website[11:-4])  # websitenin içinden sadihturan kısmı hariç diğer kısımları atınız.
+
+course = course.lower()
+print(course) # String ifadedeki karakterleri küü-çük harfle yazdırmak için 'lower' methodu kullanılır.
+
+result = website.count('a') # Herhangi bir karakter dizisinin içinde herhangi bir elemandan kaç tane olduğunu öğrenmek için 'count' methodu kullanılır..
+print(result)
+
+# Bir karater dizisinin herhangi bir ifade veya kaakterle başlayıp veya bittiğini öğrenebilmek için 'startswith' ve 'endswith' methodunu kullanırız.
+
+result1 = website.startswith('http')
+result2 = website.endswith('coc')
+print(result1)
+print(result2)
+
+high = website.find('.com') # Bir karakter dizisi içinde herhangi bir ifadenin var olup olmadığını ve ifade varsa index numarasını öğrenebilmek için 'find' methodu kullanılır.
+print(high)
+
+new_course = course.isalpha()
+print(new_course)
+
+a = 'contents'
+a = a.center(50,'*')
+print(a)
+
+b = 'Hello world'
+print(b)
+b = 'Hello world'.replace('world', 'there')
+print(b)
+
+course = course.split()
+print(course)
+
+
+
+
+# Listeler köşeli parantez içindeki argümanlardır.
+list = [1, 2, 'üç', True, False, 4.7, 0]   # Listelerin içeriği her türlü eleman olabilir.
+
+# Pythonda listeler ve liste metodları =>> String bir ifadeyi *split metodu* ile listeye dönüştürebiliriz.
+message = 'My name is Betül Kırçıl, and I am 19 years old.'.split()
+print(message)
+
+oyuncu = ['Arda', 'Turan',28, 1.77]
+print(oyuncu)
+
+# Liste elemanları başka argümanlarla değiştirilebilir.
+oyuncu[1] = 'Kırçıl'
+print(oyuncu)
+
+# *append* metoduyla listelere başka eleman veya liste eklenebilir. Ya da liste birleştirebiliriz.
+
+oyuncu.append('Barcelona')
+print(oyuncu)
+
+oyuncu = oyuncu + ['Atletico Madrid']
+print(oyuncu)
+# Eğer listenin belli kısımlarını almak istiyorsak indexleyerek belirtmemiz gerekiyor.
+
+print(oyuncu[1:len(oyuncu)])  #(oyuncu[1: ])
+# Eğer listenin belli bir kısmını başka bir listeyle değiştirmek istiyorsak index numarasıyla belirttiğimiz kısmı istediğimi listeye eşitleyenliriz.
+print(oyuncu)
+oyuncu[ : 2] = ['Betül', 'Kırçıl']
+print(oyuncu)
+oyuncu[2:4] = [19, 1.70]
+print(oyuncu)
+oyuncu[4: ] = ['Fethiye Ömer Özyer Anadolu Öğretmen Lisesi', 'Computer Engineering']
+print(oyuncu)
+
+# Listeleri boş küme yapabilmekk için listeyi boş kümeye eşitleyebiliriz.
+oyuncu[:] = []
+print(oyuncu)
+
+# INPUT fonksiyonu: Kullanıcıdan veri alabilmek amacıyla kullanılır. Tam tersi fonksiyon ise *output* fonksiyonudur ve bu fonksiyon da veri çıkışı sağlamak için kullanılır.
+a = input('Please enter your username: ')
+print(a)
+
+# input fonksiyonuyla sayı toplama işlemi yapabilmek için input fonksiyonunu int()'e çevirmemiz gerekir. Aksi takdirde string birleştirme işlemi yapar.
+a = int(input('Birinci sayıyı giriniz: '))
+b = int(input('İkinci sayıyı giriniz: '))
+c = int(input('Üçüncü sayıyı giriniz: '))
+print('Total:', a + b + c)
+
+# a = input('Birinci sayıyı giriniz: ')
+# b = input('İkinci sayıyı giriniz: ')
+# c = input('Üçüncü sayıyı giriniz: ')
+#print('Total: ', int(a)+ int(b)+ int(c))
+
+isim = input('Lütfen isminizi giriniz: ')
+soyad = input('Lütfen soyisminizi giriniz: ')
+okulu = input('Lütfen okulunuzun adını giriniz: ')
+kisi_bilgisi = [isim, soyad, okulu]
+# Print fonksiyonuyla birden fazla bilgi yazdırmadan *format* metodunu kullanarak daha kısa kodlar yazabiliriz.
+print('Kişinin adi: {}, soyadi: {} ve okuduğu okul: {}'.format(isim, soyad, okulu)) 
+
+# Liste oluştururken köşeli parantez kullanmamız gerekiyor. Köeli parantezlerin içinde argümanlar olacak.
+
+arabalar = ['Opel','Mazda','Mercedes','BMW']
+print(len(arabalar))   # arabalar listesinin eleman sayısını bulabilmek için *len* metodunu kullanmamız gerekiyor.
+print(arabalar[0], arabalar[len(arabalar) - 1]) # arabalar listesinin ilk ve son elemanını bulmak için kullanılan metod...
+arabalar[1] = 'Toyota'   # listenin herhangi bir elemanını değiştirmek için o indexteki eleman başka bir elemana eşitlenir.
+print(arabalar)
+isFound = arabalar.find('Mercedes')
+print(isFound)

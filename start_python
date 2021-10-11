@@ -1,0 +1,69 @@
+# isim = input("İsminizi giriniz :")
+# print("Merhaba "+ isim)
+# name = input("Lütfen isminizi giriniz: ")
+# print("Merhaba ",name)
+# name = input("Can you type your name: ")
+# x = name.capitalize()
+# print(f"Your name is: {x}")
+
+
+from typing import DefaultDict
+
+print("Hi, How can we help you?")
+c = input("Do you want to enter to the our system?")
+if (c == "yes" or c == "Yes"):
+    print("Hold on a minute!")
+else:
+    print("What do you want to do?")
+
+
+idNo = input("Enter your ID no: ")
+name = input("Enter your name to the system: ")
+
+name.capitalize()
+
+if (idNo == "123456789" and name != "Betül Kırçıl"):
+    print("You enetered username wrong")
+elif (idNo != "123456789" and name == "Betül Kırçıl"):
+    print("You entered password wrong")
+else:
+    print("You entered all the info wrong")
+year = int(input("Enter your birth day to the system: "))
+age = 2021 - year
+print("Your age is: {}".format(age))
+
+process = input("Select the process you would like: ")
+
+first = "Customer service"
+second = "Credit informaiton"
+third = "Account control"
+
+first.capitalize()
+second.capitalize()
+third.capitalize()
+
+if process == first:
+    print("It is bing waiting...")
+    print("You will connect soon to the customer service...")
+elif process == second:
+    print("It is bing waiting...")
+    print("You will have your credit info soon...")
+else:
+    print("It is bing waiting...")
+    print("You will control your account soon...")
+
+amount_of_money = [12000,45000,6000]
+years = [2019,2020,2021]
+for money in amount_of_money:
+    print("Your money in each year: {}, {}, {}".format(amount_of_money[0], amount_of_money[1], amount_of_money[2]))
+
+a = input("Are you delighted for choosing us? Y/N")
+b = "Yes"
+if (a == "Y" or a == b):
+    print("Thank you so much")
+else:
+    print("What can we do for you to be happier with us?")
+
+
+
+

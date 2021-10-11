@@ -1,0 +1,24 @@
+# koşul ifadeleri yazılan kodun belli şartlara bağlanmasını ve bu doğrultuda çalışmasını sağlar.
+
+name = input('Please enter your name: ')
+year = int(input('Please enter your birth year: '))
+age = 2021 - year
+case_of_education = input('Please enter your school level: ')
+if age >= 18:
+    if (case_of_education == 'lise') or (case_of_education == 'üniversite'):
+        print('{}, you can come to inside'.format(name))
+    else:
+        print('Your school level is not enough to enter inside')
+else:
+    print('Dear {}, because of your age is {} you cannot enter inside'.format(name, age))
+
+
+note1 = int(input('Please enter your first note: '))
+note2 = int(input('Please enter your second note: '))
+average = (note1 + note2)/2
+if average >= 85:
+    print('Your note is 5')
+elif 70 <= average < 85:
+    print('Your note is 4')
+else:
+    print('Your note is 1')

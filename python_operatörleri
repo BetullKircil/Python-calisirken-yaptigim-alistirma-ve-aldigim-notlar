@@ -1,0 +1,48 @@
+x, y, z = 2, 5, 207
+numbers = 1,5,7,10,6
+
+result = y//x
+print(result)
+a = y**x
+print(a)
+x, *y, z = numbers
+print(x, *y, z)
+print(*y)
+print(z)
+a = z**3
+print(y[0]+ y[1]+ y[2])= int(input("Sayi giriniz: "))
+userName = "kircilbetul@icloud.com"
+password = "Fethiye.48"
+enteredUserName = input("Please enter your user name: ")
+enterPassword = input("Please enter your password: ")
+
+result = (userName == enteredUserName) and (password == enterPassword)
+print(f"The user name you entered is:{enteredUserName} and the password you entered is: {enterPassword}. Alright are they true? {result}")
+x = int(input("Please enter any number: "))
+Y = int(input("Please enter another number: "))
+z = int(input("Please enter last number: "))
+result =(x < y) and (y < z) and (x < z)
+print(f"The numbers you entered are: {x}, {y}, {z}, and are they bigger than each other? {result}")
+midterm1 = int(input("Please enter your first midterm mark: "))
+midterm2 = int(input("Please enter your second midterm mark: "))
+final = int(input("Please enter your final exam mark: "))
+a = (midterm1 + midterm2) *0.6
+b = ( final*0.4)
+average_point = ((a + b)/2)
+result1 = (average_point > 50) or (average_point < 50)
+print(f"Your exam results: {midterm1}, {midterm2}, {final}, and your situation of exam: {result1}.Geçtiniz.")
+result2 = (average_point < 50) or (final > 70)
+print(f"Your exam results are: {midterm1}, {midterm2}, {final}, and it is ot essential not to pass the exams if you take 70 and above from final exams.{result2}")
+
+ad = input("Adınız nedir: ")
+kilo = int(input("Lütfen kilonuzu giriniz: "))
+boy = int(input("Lütfen boyunuzu girniz: "))
+kilo_indexi = (kilo / (boy**2))
+# zayıf = 0 - 18.4
+# normal = 18.5 _ 24.9
+# fazla_kilolu = 25.0 -29.9
+# obez = 30.0 - 34.9
+print("Girmiş olduğunuz bilgilere göre vücut kitle nedexiniz: {kilo_indexi}. Böylece grubunuz: ")
+
+
+print(bool("abc"))

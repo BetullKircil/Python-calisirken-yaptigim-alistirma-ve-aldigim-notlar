@@ -1,0 +1,57 @@
+x = 0
+while x < 10:
+    print(' {} değeri 10dan küçüktür.'.format(x))
+    x += 1
+else:
+    print(' {} değeri 10dan büyük değildir.'.format(x))
+
+# FAKTÖRİYEL SENARYOSU:
+
+faktöriyel = 1
+sayi = int(input(' Lütfen bir sayı giriniz: '))
+i = 1
+while i <= sayi:
+    faktöriyel *= i
+    print(faktöriyel)
+    i += 1
+print('{} sayısının faktöriyeli: {}dır.'.format(sayi, faktöriyel))
+
+## 
+
+a = 1
+sayi = int(input('Lütfen bir sayı giriniz: '))
+while a <= sayi:
+    print(a)
+    a += 1
+
+##
+
+oyuncular = ['Ronaldo x', 'Hakan Çalhanoğlu', 'Emre Bölezoğlu', 'Gökhan Gönül']
+moderator = ('Emre Bölezoğlu')  # Eğer oyunculardan birisi moderatörse oyuncu değil moderatör olarak anılacak.
+moderator_sirasi = 1 # kaçıncı moderatör olduğu da while döngüsü kullanılarak anlatılacak.
+oyuncu_sırası = 1 # Eğer oyuncuysa kaçıncı oyuncu olduğu while döngüsü kullanılarak ekrana dikte edilecek.
+for oyuncu in oyuncular:
+    ad = oyuncu.split()[0]  # oyuncuların isimleri *split* metodu kullanılarak isim-soyisim şeklinde yazdırılır.
+    soyad = oyuncu.split()[1]
+    print('{}. oyuncunun adı: {} ve soyadı: {}'.format(oyuncu_sırası, ad, soyad))
+    oyuncu_sırası += 1
+    if (oyuncu == moderator):
+        print('{}. moderatörün adı {} ve soyadı {}'.format(moderator_sirasi,ad, soyad ))
+        moderator_sirasi += 1
+
+
+lisans_ogrencileri = ['Ahmet Teoman', 'Mustafa Demirci', 'Mehmet Biçer', 'Hasan Basri']
+yuksek_lisans_ogrencileri = ('Mehmet Biçer')
+lisans_sayisi = 1
+yl_sayisi = 1
+for l_ogrenci in lisans_ogrencileri:
+    isim = l_ogrenci.split()[0]
+    soyisim = l_ogrenci.split()[1]
+    if (lisans_ogrencileri == yuksek_lisans_ogrencileri):
+        print('{} numaralı yüksek lisans öğrencisinin ismi: {} ve soy ismi:{}'.format(yl_sayisi, isim,soyisim))
+        yl_sayisi += 1
+    else:
+        print('{} numaralı lisans öğrencisinin ismi: {} ve soyismi: {}'.format(lisans_sayisi, isim, soyisim))
+        lisans_sayisi += 1
+    
+

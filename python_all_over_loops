@@ -1,0 +1,200 @@
+# --for-- döngüsü bir liste içindeki argümanların teker teker yazdırılmasını sağlar.
+import builtins
+
+
+numbers = [1, 2, 3, 4, 5, 6]
+for i in numbers:
+    print(i)
+# range() fonksiyonu bir aralık belirtir. Aralığın sol tarafı dahil ancak sağ tarafı dahil değildir.
+# range(2,8) => [2,3,4,5,6,7]
+for i in numbers:
+    print('Hello') # döngü kadar 'hello' bastırılır.
+
+for i in 'betül':
+    print(i)  # string ifadeler içindeki her bir karakter de yazdırılabilir.
+
+names = ['Ali', 'Ahment', 'Mehmet', 'Fatma']
+for name in names:
+    print(f' My name is {name}')
+
+tuple = (1,2,3,4,5,6)
+for a in tuple:
+    print(a)
+
+list = [(1,2),(3,4),(5,6),(7,8)]
+for b in list:
+    print(b)
+
+for a,b in list:
+    print(a,b)
+
+dictionaries = {'k1': 1, 'k2': 2, 'k3': 3}
+for key, value in dictionaries:
+    print(key, value)
+
+# numbers listesindeki hangi sayı 3'ün katıdır.
+numbers = [1,3,5,7,9,12,19,21] 
+for i in numbers:
+    if i % 3 == 0:
+        print(i)
+
+# Numbers listesindeki sayıların toplamı kaçtır?
+total = 0
+for e in numbers:
+    total += e
+print(total)
+
+# Numbers listesindeki tek sayıların karesini alınız.
+for a in numbers:
+    if a % 2 == 1:
+        print(a**2)
+
+cities = ['Kocaeli', 'İstanbul', 'Ankara', 'İzmir',' Rize']
+# Cities listesindeki hangi karakterler en fazla 5 karakterlidir.
+for city in cities:
+    if len(city) <= 5:
+        print(city)
+
+
+products = [
+    {'Name': 'Samsung S6', 'Price': '3000'},
+    {'Name': 'Samsung S7', 'Price': '4000'},
+    {'Name': 'Samsung S8', 'Price': '5000'},
+    {'Name': 'Samsung S9', 'Price': '6000'},
+    {'Name': 'Samsung S10','Price': '7000'}
+]
+# ürünlerin fiyatları toplamı nedir
+toplam = 0
+for x in products:
+    toplam += int(x['Price'])
+print(toplam)
+
+#fiyatı en fazla 5000 olan ürünleri gösteriniz.
+for y in products:
+
+    if int(y['Price']) <= 5000:
+        print(y['Name'])
+
+## while loops
+i = 0
+while i <= 100:
+    print(i)
+    i += 1
+
+i = 0
+while i < 3:
+    print('Hi')
+    i += 1
+
+name = '' # false
+while not name.strip():
+    name = input('Please enter a name: ')
+print('Hi {}'.format(name))
+
+i = 0
+while i <= 100:
+    if i % 2 == 0:
+        print('{} sayisi çifttir.'.format(i))
+    else:
+        print('{} sayisi tektir.'.format(i))
+    i += 1
+
+     
+sayilar = [1, 3, 5, 7, 9, 12, 19, 21]
+# Sayilar listesini while ile ekrana yazdırın.
+
+# Başlangıç ve bitiş değerlerini  kullanıcıdan alıp aradaki tüm tek sayıları ekrana yazdırın
+
+# 1-100 arasındaki sayıları azalan şekilde yazdırın
+i = 100
+while i > 0 and i <= 100:
+    print(i)
+    i -= 1
+
+# Kullanıcıdan alacağınız 5 sayıyı ekrana sıralı bir şekilde yazdırın.
+sayis = []
+i = 1
+while i <= 5:
+    sayi = int(input('Lütfen bir sayi giriniz: '))
+    i += 1
+    sayis.append(sayi)
+    sayis.sort()
+print(sayis)
+
+# Kullanıcıdan alacağınız sınırsız sayıda ürün bilgisini ürünler listesi içinde saklayınız.
+ürünler = []
+ürün_adedi = int(input('Lütfen ürün adedini giriniz: '))
+i = 1
+while i <= ürün_adedi:
+    ürün = input('Ürün adını giriniz: ') 
+    price = input('Lütfen ürünün fiyatını giriniz: ')
+    ürünler.append({'Name': ürün, 'Price': price })
+    i += 1
+print(ürünler)
+
+# **ürün sayısını kullanıcıya sorun
+# ** dictionary liste yapısı şeklinde olsun(name,price)
+# **ürün ekleme işlem bittiğinde ürünleri ekranda while ile listeleyin.
+
+sonuc = 1
+for i in range(0,10):  # 0,1,2,3,4,5.....9 (toplamda 10 kere döndü bu döngü)
+    sonuc *= 2
+print(sonuc)
+
+## for içinde for döngüsü:
+liste1 = ['a', 'b', 'c']
+liste2 = [1, 2, 3]
+for i in liste1:
+    for x in liste2:
+        print(i, x)
+
+for i in range(100):
+    if i % 2 == 0:
+        continue
+    print(i)
+    if i == 91:
+        print('Döngüden çıkılıyor')
+        break
+
+x = 4
+y = 5
+while x*y < 550:
+    print(x,y)
+    x *= 2
+    y += 2
+
+
+## *break* ve *continue* deyimleri:
+# break deyimi verilen şart sağlandığı takdirde döngüden çıkılması için kullanılır
+# continue deyimi verilen şart sağlandığında döngüyü durdurup kalan kısımdan deva eder.
+
+## SİSTEME GİRİS UYGULAMASII:
+right = int(input('Bu oyunda kaç tane hak istiyorsunuz: '))
+password = 'BETUL'
+while right > 0:
+    right -= 1
+    entered_password = input('Please enter your password: ')
+    entered_password = entered_password.upper()
+    if entered_password == password:
+        print('You have entered your password correctly.')
+        break
+    else:
+        print('Your password is wrong. Please try again.')
+    if right == 0:
+        print('Unfortunately your right is up.')
+
+
+
+
+
+
+
+
+a = 1
+while a <= 15:
+    a += 1
+    if a % 3 == 0:
+        continue
+    print(a)
+    if a == 12:
+        break

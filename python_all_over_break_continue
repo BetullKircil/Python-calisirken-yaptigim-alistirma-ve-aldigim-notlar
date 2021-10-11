@@ -1,0 +1,96 @@
+# break deyimi belli bi şart sağlandığı durumda döngüden çıkılmasını sağlar.
+# continue deyimi  belli şart  sağlandığı takdirde döngünğn durdurulmasını ve kalan kısımdan deam edilmesini sağlar.
+
+result = 0
+for i in range(0, 101):       ## 0'dan 100'e kadar tüm sayıların toplamı kaçtır.
+    result += i
+print(result)
+
+name = 'Betül Kırçıl'
+for x in name:
+    if x == 't':
+        continue    # continue deyimi döngünün o kısmından çıkıp kalan kısmını çalıştırmaya devam eder.
+    print(x)
+
+fruit = 'Pine apple'
+for letter in fruit:
+    if letter == 'e':
+        break       # break deyimi döngüden tamamen çıkılmasını sağlar.
+    print(letter)
+
+
+b = 0
+while b < 5:
+    b += 1  ## artırma işlemin başa almalıyız ki döngü *continue*den sonra da devam edebilsin.
+    if b == 3:
+        continue
+    print(b)   ## eger artırma işlemini en sonda alırsak döngü continuedan sonra çalışmayacağı için hep 3'te takılı kalır.
+
+# 1'den 100'e kadar tek sayıların toplamı.
+a = 0
+toplam = 0
+while a <= 100:
+    a += 1
+    if a % 2 == 0:
+        continue
+    toplam += a
+    print(toplam)
+
+## LOOPS METHODS:
+# range method: Range metodu aralık belirtmek amaçlı döngülerde kullanılabilirler.
+for number in range(0,12):
+    print(number)
+
+# range metodunda aralıktaki sayıların kaçarlı ilerleyeceğini belirtebiliriz.
+for item in range(0,101,10):
+    print(item)
+print(list(range(0,101,10)))  ## aralıktaki sayıları listeye ekleyebiliriz.
+
+## *ENUMERATE* METODUUU: enumerate metodu string ifadenin karakterlerinin indexlerini belirtir.
+index = 0
+sayilar = [1,2,36,5,7,8]
+for sayi in sayilar:
+    print('{}. indexteki sayi: {}'.format(index, sayi))
+    index += 1
+
+
+first_name = 'Betül'
+for index, harf in enumerate(first_name):
+    print(f'{index} indexli harf: {harf}')
+
+    
+subeler = ['1-B','1-A','1-C','2-A','2-B','2-C']
+for index, sube in enumerate(subeler):
+    print(f'{index} indexli sube: {sube}')
+
+
+## ZIP METODUUUU: zip metodu iki ya da daha fazla listeyi birleştirir.
+list1 = [1,2,3,4,5]
+list2 = ['Betül', 'Ali','Esra','Ahmet','Teslime']
+for sıra, isim in zip(list1,list2):
+    print('{}.sıradaki kişi: {}dir'.format(sıra,isim))
+
+
+## Break and continue statements:
+for item in range(100):
+    if item == 50:
+        continue
+    print(item)
+
+# 10'a kadar çift sayıların toplamı.
+i = 0
+total = 0
+while i < 10:
+    i += 1
+    if i % 2 == 1:
+        continue
+    total += i
+    print(total)
+siralama = [1,2,3,4,5]
+erkekler = ['Ahmet', 'Mustafa','Ali','Mehmet','Mert']
+kizlar = ['Esra','Burcu', 'Eda','Aylin', 'Feride']
+for sira, erkek, kiz in zip(siralama, erkekler, kizlar):
+   print('{}-{}, {} ile eşleşmiştir.'.format(sira, erkek,kiz))
+
+print(list(zip(erkekler,kizlar)))
+
